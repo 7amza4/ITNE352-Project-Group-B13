@@ -8,9 +8,13 @@ The project is a client-server system that returns news headlines and sources us
 
 # Group
 Group No. : B13
+
 Course code: ITNE352/ITCE320
+
 Section No. : 02
+
 Students Names: HAMZA NASER JASIM ALFAYEZ , YOUSSEF MOHAMED HELMY ABDELSALAM
+
 Students IDs: 202204610 , 202105811 
 
 # Table of Contents
