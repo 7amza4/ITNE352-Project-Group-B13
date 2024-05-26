@@ -14,7 +14,6 @@ def connect_to_server():
     client_socket.send(client_name.encode())
 
     while True:
-        # Display the main menu
         print("1. Search headlines")
         print("2. List of Sources")
         print("3. Quit")
@@ -30,7 +29,6 @@ def connect_to_server():
 
     client_socket.close()
 
-# Handle headlines menu
 def handle_headlines_menu(client_socket):
     while True:
         print("1. Search for keywords")
@@ -55,9 +53,8 @@ def handle_headlines_menu(client_socket):
             request = {'menu': 'headlines', 'type': 'all'}
 
         client_socket.send(json.dumps(request).encode())
-        display_results(client_socket)
+        display_results(client_socket, 'headlines')
 
-# Handle sources menu
 def handle_sources_menu(client_socket):
     while True:
         print("1. Search by category")
@@ -82,17 +79,22 @@ def handle_sources_menu(client_socket):
             request = {'menu': 'sources', 'type': 'all'}
 
         client_socket.send(json.dumps(request).encode())
-        display_results(client_socket)
+        display_results(client_socket, 'sources')
 
-# Display results and handle detailed request
-def display_results(client_socket):
+def display_results(client_socket, menu):
     results = json.loads(client_socket.recv(4096).decode())
-    for result in results:
-        print(f"{result['id']}: {result['name']}")
+    if menu == 'headlines':
+        for i, article in enumerate(results):
+            print(f"{i + 1}. Source: {article['source']['name']} - Title: {article['title']}")
+        selected_index = int(input("Select an article number for more details: ")) - 1
+        selected_title = results[selected_index]['title']
+    elif menu == 'sources':
+        for i, source in enumerate(results):
+            print(f"{i + 1}. {source['name']}")
+        selected_index = int(input("Select a source number for more details: ")) - 1
+        selected_id = results[selected_index]['id']
 
-    selected_id = input("Select an item by ID for more details: ")
-    client_socket.send(selected_id.encode())
-
+    client_socket.send(selected_title.encode() if menu == 'headlines' else selected_id.encode())
     detailed_result = json.loads(client_socket.recv(4096).decode())
     print(json.dumps(detailed_result, indent=4))
 
