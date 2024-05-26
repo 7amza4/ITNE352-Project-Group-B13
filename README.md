@@ -1,10 +1,14 @@
 # **News Headlines and Sources Retrieval System**
-##
+
 ## Project Description
 The project is a client-server system that returns news headlines and sources using the News API. The system enables users to interact with the server by searching for headlines by keyword, category, or country, as well as listing all headlines. Users can also search for news sources by category, country, or language, or list all the sources.
 
+---
+
 ## Semester 
 2023-2024 2nd semester
+
+---
 
 ## Group
 Group No. : B13
@@ -17,6 +21,7 @@ Students Names: HAMZA NASER JASIM ALFAYEZ , YOUSSEF MOHAMED HELMY ABDELSALAM
 
 Students IDs: 202204610 , 202105811 
 
+---
 
 ## Table of Contents
 
@@ -32,6 +37,8 @@ Students IDs: 202204610 , 202105811
 
 6- [Conclusion](#conclusion)
 
+---
+
 ## Requirements
 
 **To set up and run the project in a local environment, follow these steps:**
@@ -45,6 +52,8 @@ pip install requests
 ```
 
 3- Get an API key from news API website: https://NewsAPI.org and replace the "API_KEY" constant in the server.py file with your API key.
+
+---
 
 ## How to Run
 
@@ -63,6 +72,8 @@ python client.py
 3- The client will ask you to enter your name and then display a menu with options to search for headlines, list sources, or quit the application.
 
 4- Follow the instructions to interact with the server and retrieve the desired news data.
+
+---
 
 ## The Scripts
 
@@ -108,6 +119,8 @@ get_api_data(endpoint, params=None)
 save_to_file(group_id, client_name, option, data)
 ```
 
+---
+
 ## Additional Concepts
 
 The project includes the following additional concepts:
@@ -118,9 +131,13 @@ The project includes the following additional concepts:
 
 3- **Error Handling**: To properly manage and log any issues that might happen during program execution, the server script contains exception handling functions.
 
+---
+
 ## Acknowledgments
 
 This project was established as an educational project that gets news information from the NewsAPI https://newsapi.org. We would like to thank the NewsAPI team for making this useful resource available.
+
+---
 
 ## Conclusion
 
