@@ -3,7 +3,7 @@ import threading
 import json
 import requests
 
-API_KEY = 'b8bc1265cf584b9ca9d3576dec709247'
+API_KEY = 'fe7ad007929349aa8e56fccd66eefe71'
 GROUP_ID = 'my_group'  # Replace with your actual group ID
 
 def get_api_data(endpoint, params=None):
