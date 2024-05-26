@@ -4,7 +4,7 @@ import json
 import requests
 
 API_KEY = 'fe7ad007929349aa8e56fccd66eefe71'
-GROUP_ID = 'my_group'  # Replace with your actual group ID
+GROUP_ID = 'B13'  
 
 def get_api_data(endpoint, params=None):
     base_url = 'https://newsapi.org/v2/'
